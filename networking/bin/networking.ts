@@ -10,3 +10,9 @@ new VpcStack(app, 'vpc-TEST', {
 		'app:environment': 'test'
 	}
 })
+
+new VpcStack(app, 'vpc-PROD', {
+	tags: {
+		'app:environment': 'prod'
+	}
+})
