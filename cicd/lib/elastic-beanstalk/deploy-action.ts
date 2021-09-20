@@ -39,25 +39,26 @@ export class ElasticBeanstalkDeployAction extends Action {
 		options.role.addToPrincipalPolicy(new PolicyStatement({
 			resources: ['*'],
 			actions: [
-                'elasticbeanstalk:*',
-                'ec2:*',
-                'elasticloadbalancing:*',
-                'autoscaling:*',
-                'cloudwatch:*',
-                's3:*',
-                'sns:*',
-                'cloudformation:*',
-                'rds:*',
-                'sqs:*',
-                'ecs:*',
-            ],
+				'elasticbeanstalk:*',
+				'ec2:*',
+				'elasticloadbalancing:*',
+				'autoscaling:*',
+				'cloudwatch:*',
+				's3:*',
+				'sns:*',
+				'cloudformation:*',
+				'rds:*',
+				'sqs:*',
+				'ecs:*',
+				'logs:*',
+			],
 		}))
 
-        return {
-            configuration: {
-                ApplicationName: this.props.applicationName,
-                EnvironmentName: this.props.environmentName
-            },
-        };
+		return {
+			configuration: {
+				ApplicationName: this.props.applicationName,
+				EnvironmentName: this.props.environmentName
+			},
+		};
 	}
 }
